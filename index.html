@@ -19,21 +19,43 @@
         I will graduate next semester with my associate's in web technology from <span class="spancoloring2">SWIC</span>. </p>
         <h2>List of hobbies</h2>
         <ul>
-    <li><a href="https://oldschool.runescape.com/">Playing old school runescape</a></li>
-    <li><a href="https://www.youtube.com/user/h3h3Productions">Watching h3h3 on Youtube</a></li>
-    <li>Skateboarding</li>
-    <li>Working out</li>
-    <li>Going to programming meetups</li>
+                <!-- <li><a href="https://oldschool.runescape.com/">Playing old school runescape</a></li>
+                <li><a href="https://www.youtube.com/user/h3h3Productions">Watching h3h3 on Youtube</a></li>
+                <li>Skateboarding</li>
+                <li>Working out</li>
+                <li>Going to programming meetups</li>    -->
         </ul> 
+        <button class="toggleBtn">Toggle name</button>
+        <button class="getHobbies">Get hobbies</button>
 <script>
     $( document ).ready(function() {
-    $( ".spancoloring1",document.spancoloring1).click(function() {
-        let spanColor = $(".spancoloring1").css({color:"red"});
+    $( "span",document.sel).click(function TextColorChange() {
+        let spanColor = $(this).css({color:"red"});
     });
-        $( ".spancoloring2",document.spancoloring2).click(function() {
-            let spanColor = $(".spancoloring2").css({color:"red"});
-        });
-        });   
+        $( ".toggleBtn",document.sel).click(function toggleBtn() {
+            let nameShow = $(".Myname").toggle();
+            }); 
+            
+               $(".getHobbies",document.sel).click(function getHobbies(){
+                $.ajax({
+                    dataType: "json",
+                    url: "ajax/hobbies.json",
+                    success: function getHobbies(json){
+                        var items = [];
+                                $.each( json, function( key, val ) {
+                                    items.push( "<li id='" + key + "'>" + val + "</li>" );
+                                });
+                                
+                                $( "<ul/>", {
+                                    "class": "my-new-list",
+                                    html: items.join( "" )
+                                }).appendTo( "body" );
+                                                    }
+                });
+               });
+                    
+});           
+ 
 </script>
 </body>
 </html>
