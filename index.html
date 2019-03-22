@@ -19,43 +19,101 @@
         I will graduate next semester with my associate's in web technology from <span class="spancoloring2">SWIC</span>. </p>
         <h2>List of hobbies</h2>
         <ul>
-                <!-- <li><a href="https://oldschool.runescape.com/">Playing old school runescape</a></li>
+                <li><a href="https://oldschool.runescape.com/">Playing old school runescape</a></li>
                 <li><a href="https://www.youtube.com/user/h3h3Productions">Watching h3h3 on Youtube</a></li>
                 <li>Skateboarding</li>
                 <li>Working out</li>
-                <li>Going to programming meetups</li>    -->
+                <li>Going to programming meetups</li>   
         </ul> 
         <button class="toggleBtn">Toggle name</button>
-        <button class="getHobbies">Get hobbies</button>
-<script>
-    $( document ).ready(function() {
-    $( "span",document.sel).click(function TextColorChange() {
-        let spanColor = $(this).css({color:"red"});
-    });
-        $( ".toggleBtn",document.sel).click(function toggleBtn() {
-            let nameShow = $(".Myname").toggle();
-            }); 
+        <!-- <button class="getHobbies">Get hobbies</button> -->
+
+        <table>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+              <th>fake news</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>fake news</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>fake news</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+              <td>fake news</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+              <td>fake news </d>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+              <td>fake news</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+              <td>fake news</td>
+            </tr>
+          </table>
+
+          <script>
+              $( document ).ready(function(){
+                    $( "span:last-child" ).css({color:"red"});
+                    $( " span:first-child" ).css({color:"blue"});
+                    $( " tr td:nth-of-type(odd)" ).css({color:"blue"});
+                    $( " tr td:nth-of-type(even)" ).css({color:"green"});
+
+
+              });
+          </script>
+          
+
+    <script>
+//     $( document ).ready(function() {
+//     $( "span",document.sel).click(function TextColorChange() {
+//         let spanColor = $(this).css({color:"red"});
+//     });
+//         $( ".toggleBtn",document.sel).click(function toggleBtn() {
+//             let nameShow = $(".Myname").toggle();
+//             }); 
             
-               $(".getHobbies",document.sel).click(function getHobbies(){
-                $.ajax({
-                    dataType: "json",
-                    url: "ajax/hobbies.json",
-                    success: function getHobbies(json){
-                        var items = [];
-                                $.each( json, function( key, val ) {
-                                    items.push( "<li id='" + key + "'>" + val + "</li>" );
-                                });
+//                $(".getHobbies",document.sel).click(function getHobbies(){
+//                 $.ajax({
+//                     dataType: "json",
+//                     url: "ajax/hobbies.json",
+//                     success: function getHobbies(json){
+//                         var items = [];
+//                                 $.each( json, function( key, val ) {
+//                                     items.push( "<li id='" + key + "'>" + val + "</li>" );
+//                                 });
                                 
-                                $( "<ul/>", {
-                                    "class": "my-new-list",
-                                    html: items.join( "" )
-                                }).appendTo( "body" );
-                                                    }
-                });
-               });
+//                                 $( "<ul/>", {
+//                                     "class": "my-new-list",
+//                                     html: items.join( "" )
+//                                 }).appendTo( "body" );
+//                                                     }
+//                 });
+//                });
                     
-});           
+// });           
  
-</script>
+// </script>
 </body>
 </html>
